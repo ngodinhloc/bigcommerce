@@ -34,7 +34,7 @@ class Order extends AbstractEntity
     /**
      * @param array|null $data
      */
-    protected function setData(array $data = null)
+    public function setData(array $data = null)
     {
         if (isset($data['customer_id'])) {
             $this->setCustomerId($data['customer_id']);

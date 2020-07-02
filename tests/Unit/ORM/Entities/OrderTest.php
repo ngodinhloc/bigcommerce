@@ -16,6 +16,8 @@ class OrderTest extends TestCase
     }
     
     /**
+     * @covers \App\ORM\Entities\Order::__construct
+     * @covers \App\ORM\Entities\Order::setData
      * @covers \App\ORM\Entities\Order::setId
      * @covers \App\ORM\Entities\Order::setDate
      * @covers \App\ORM\Entities\Order::setCurrency
@@ -39,7 +41,8 @@ class OrderTest extends TestCase
             'date_created'     => date('Y-m-d h:i:s'),
             'id'               => 1,
         ];
-        $this->order = new Order($data);
+        $this->order = new Order([]);
+        $this->order->setData($data);
         $this->assertEquals($data['customer_id'], $this->order->getCustomerId());
         $this->assertEquals($data['status'], $this->order->getStatus());
         $this->assertEquals($data['subtotal_inc_tax'], $this->order->getSubTotal());
@@ -78,6 +81,7 @@ class OrderTest extends TestCase
                     ->setSubTotal($data['subtotal_inc_tax'])
                     ->setCurrency($data['currency_code'])
                     ->setDate($data['date_created'])
+                    ->setOrderProducts([])
                     ->setId($data['id']);
         $this->assertEquals($data['customer_id'], $this->order->getCustomerId());
         $this->assertEquals($data['status'], $this->order->getStatus());
@@ -85,5 +89,6 @@ class OrderTest extends TestCase
         $this->assertEquals($data['currency_code'], $this->order->getCurrency());
         $this->assertEquals($data['date_created'], $this->order->getDate());
         $this->assertEquals($data['id'], $this->order->getId());
+        $this->assertEquals([], $this->order->getOrderProducts());
     }
 }

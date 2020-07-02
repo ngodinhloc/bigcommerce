@@ -16,6 +16,8 @@ class OrderProductTest extends TestCase
     }
     
     /**
+     * @covers \App\ORM\Entities\OrderProduct::__construct
+     * @covers \App\ORM\Entities\Order::setData
      * @covers \App\ORM\Entities\OrderProduct::setId
      * @covers \App\ORM\Entities\OrderProduct::setPrice
      * @covers \App\ORM\Entities\OrderProduct::setType
@@ -45,7 +47,8 @@ class OrderProductTest extends TestCase
             'base_price' => 10,
             'id'         => 1,
         ];
-        $this->orderProduct = new OrderProduct($data);
+        $this->orderProduct = new OrderProduct([]);
+        $this->orderProduct->setData($data);
         $this->assertEquals($data['order_id'], $this->orderProduct->getOrderId());
         $this->assertEquals($data['product_id'], $this->orderProduct->getProductId());
         $this->assertEquals($data['name'], $this->orderProduct->getName());

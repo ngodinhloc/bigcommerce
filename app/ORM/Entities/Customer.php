@@ -34,7 +34,7 @@ class Customer extends AbstractEntity
     /**
      * @param array|null $data
      */
-    protected function setData(array $data = null)
+    public function setData(array $data = null)
     {
         if (isset($data['company'])) {
             $this->setCompany($data['company']);
