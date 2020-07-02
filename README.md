@@ -8,6 +8,7 @@
  * OrderProduct
  
  Entities represent BigCommerce resources (Customer, Order, OrderProduct)
+ 
  Relationships:  
  * Customer may have multiple Order
  * Order may have multiple OrderProduct
@@ -17,13 +18,17 @@
  * OrderRepository
  * OrderProductRepository
  
- Repositories are used to retrieve data from data source (BigCommerce)
+ Repositories are used to retrieve data from data source (BigCommerce) and return entities or collection of entities.
  
  ## Cache
  * FileCache
  
  Since the application is using data from a third party APIs, which is BigCommerce in this case, each of the request is expensive 
  and might take long response time. Therefore, I created a Cache Engine used within the ORM to cache the data from BigCommerce
+ 
+ ## ResourceManager
+ ResourceManager use Client (\Bigcommerce\Api\Client) to get data from BigCommerce and convert it into language agnostic format
+ so that it can be easily stored in cache.
  
  ## Services
  * CustomerService
