@@ -1,6 +1,12 @@
  # Solution
+ [![Software license][ico-license]](README.md)
+ [![Build status][ico-travis]][link-travis]
  
- My approach is to treat BigCommerce as a data source, so I created an ORM to work with the data source
+ [ico-license]: https://img.shields.io/github/license/nrk/predis.svg?style=flat-square
+ [ico-travis]: https://travis-ci.org/ngodinhloc/bigcommerce.svg?branch=master
+ [link-travis]: https://travis-ci.org/github/ngodinhloc/bigcommerce
+ 
+ My approach is to treat BigCommerce as a data source, so I created an ORM following the SOLID principles
  
  ## Entities
  * Customer 
