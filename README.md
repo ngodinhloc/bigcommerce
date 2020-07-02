@@ -18,12 +18,12 @@
  * OrderRepository
  * OrderProductRepository
  
- Repositories are used to retrieve data from data source (BigCommerce) and return entities or collection of entities.
+ Repositories are used to retrieve data from data source and return entities, or collection of entities.
  
  ## Cache
  * FileCache
  
- Since the application is using data from a third party APIs, which is BigCommerce in this case, each of the request is expensive 
+ Since the application is using data from a third party APIs, each of the request is expensive 
  and might take long response time. Therefore, I created a Cache Engine used within the ORM to cache the data from BigCommerce
  
  ## ResourceManager
@@ -34,6 +34,7 @@
  * CustomerService
  
  This service use repositories to retrieve data and return collection of entities, which are convenient to use in controllers and views  
+
  ## Testing
  * Integration Tests
  * Unit Tests
