@@ -1,3 +1,44 @@
+ # Solution
+ 
+ My approach is to treat BigCommerce as a data source, so I created an ORM to work with the data source
+ 
+ ## Entities
+ * Customer 
+ * Order
+ * OrderProduct
+ 
+ Entities represent BigCommerce resources (Customer, Order, OrderProduct)
+ Relationships:  
+ * Customer may have multiple Order
+ * Order may have multiple OrderProduct
+ 
+ ## Repositories
+ * CustomerRepository
+ * OrderRepository
+ * OrderProductRepository
+ 
+ Repositories are used to retrieve data from data source (BigCommerce)
+ 
+ ## Cache
+ * FileCache
+ 
+ Since the application is using data from a third party APIs, which is BigCommerce in this case, each of the request is expensive 
+ and might take long response time. Therefore, I created a Cache Engine used within the ORM to cache the data from BigCommerce
+ 
+ ## Services
+ * CustomerService
+ 
+ This service use repositories to retrieve data and return collection of entities, which are convenient to use in controllers and views  
+ ## Testing
+ * Integration Tests
+ * Unit Tests
+ 
+ The only one integration test is to test BigCommerce client connection.
+ 
+ Unit tests are written for all added classes.
+ 
+ ----------------------------------------------------------------------------------------
+ 
  # Customer Browser
 The goal of this assignment is to demonstrate your familiarity with building an application that consumes a JSON API
 and displays aggregated data. There is no time limit for this assignment but we would advise time boxing the exercise
