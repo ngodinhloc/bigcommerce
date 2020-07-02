@@ -1,10 +1,13 @@
  # Solution
  [![Software license][ico-license]](README.md)
  [![Build status][ico-travis]][link-travis]
+ [![Coverage][ico-codecov]][link-codecov]
  
+ [ico-codecov]: https://codecov.io/gh/ngodinhloc/bigcommerce/branch/master/graph/badge.svg
  [ico-license]: https://img.shields.io/github/license/nrk/predis.svg?style=flat-square
  [ico-travis]: https://travis-ci.org/ngodinhloc/bigcommerce.svg?branch=master
  [link-travis]: https://travis-ci.org/github/ngodinhloc/bigcommerce
+ [link-codecov]: https://codecov.io/gh/ngodinhloc/bigcommerce 
  
  My approach is to treat BigCommerce as a data source, so I created an ORM following the SOLID principles
  
