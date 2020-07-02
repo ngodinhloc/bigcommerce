@@ -29,6 +29,7 @@ class ResourceManagerTest extends TestCase
     }
     
     /**
+     * @covers \App\ORM\ResourceManager::__construct
      * @covers \App\ORM\ResourceManager::setClient
      * @covers \App\ORM\ResourceManager::setCacheEngine
      * @covers \App\ORM\ResourceManager::setCache
@@ -48,6 +49,8 @@ class ResourceManagerTest extends TestCase
     
     /**
      * @covers \App\ORM\ResourceManager::getCustomers
+     * @covers \App\ORM\ResourceManager::resourcesToArray
+     * @covers \App\ORM\ResourceManager::resourceToArray
      */
     public function testGetCustomers()
     {
@@ -64,6 +67,8 @@ class ResourceManagerTest extends TestCase
     
     /**
      * @covers \App\ORM\ResourceManager::getCustomer
+     * @covers \App\ORM\ResourceManager::resourcesToArray
+     * @covers \App\ORM\ResourceManager::resourceToArray
      */
     public function testGetCustomer()
     {
@@ -80,6 +85,8 @@ class ResourceManagerTest extends TestCase
     
     /**
      * @covers \App\ORM\ResourceManager::getOrders
+     * @covers \App\ORM\ResourceManager::resourcesToArray
+     * @covers \App\ORM\ResourceManager::resourceToArray
      */
     public function testGetOrders()
     {
@@ -96,6 +103,8 @@ class ResourceManagerTest extends TestCase
     
     /**
      * @covers \App\ORM\ResourceManager::getOrderProducts
+     * @covers \App\ORM\ResourceManager::resourcesToArray
+     * @covers \App\ORM\ResourceManager::resourceToArray
      */
     public function testGetOrderProducts()
     {
