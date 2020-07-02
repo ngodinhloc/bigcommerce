@@ -66,25 +66,6 @@ class ResourceManagerTest extends TestCase
     }
     
     /**
-     * @covers \App\ORM\ResourceManager::getCustomers
-     * @covers \App\ORM\ResourceManager::resourcesToArray
-     * @covers \App\ORM\ResourceManager::resourceToArray
-     */
-    public function testGetCustomersNoCache()
-    {
-        $limit     = 10;
-        $mockKey   = md5("Customers.Limit.$limit");
-        $mockCache = null;
-        $this->cacheEngine->method('createKey')->willReturn($mockKey);
-        $this->cacheEngine->method('getCache')->willReturn($mockCache);
-        $this->cacheEngine->expects($this->exactly(1))->method('createKey')->with("Customers.Limit.$limit");
-        $this->cacheEngine->expects($this->exactly(1))->method('getCache')->with($mockKey);
-        $this->cacheEngine->expects($this->exactly(1))->method('writeCache');
-        
-        $this->resourceManager->getCustomers($limit);
-    }
-    
-    /**
      * @covers \App\ORM\ResourceManager::getCustomer
      * @covers \App\ORM\ResourceManager::resourcesToArray
      * @covers \App\ORM\ResourceManager::resourceToArray
