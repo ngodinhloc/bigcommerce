@@ -24,7 +24,7 @@
  * FileCache
  
  Since the application is using data from a third party APIs, each of the request is expensive 
- and might take long response time. Therefore, I created a Cache Engine used within the ORM to cache the data from BigCommerce
+ and might take long response time. Therefore, I created a Cache Engine to cache the data from BigCommerce
  
  ## ResourceManager
  ResourceManager use Client (\Bigcommerce\Api\Client) to get data from BigCommerce and convert it into language agnostic format
